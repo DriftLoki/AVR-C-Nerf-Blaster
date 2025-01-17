@@ -1,11 +1,11 @@
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#define F_CPU 16000000UL
-#include <util/delay.h>
-#include <stdlib.h>
-
 #define MAX_THROTTLE 1250
 #define MIN_THROTTLE 1032
+#define F_CPU 16000000UL
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
+#include <stdlib.h>
 
 // Global variables
 volatile uint16_t pulse_width = MIN_THROTTLE; // Start with minimum throttle (1016 μs
@@ -13,7 +13,7 @@ volatile uint16_t pulse_width = MIN_THROTTLE; // Start with minimum throttle (10
 
 volatile uint8_t pushState = 0;        // Start solenoid push state as unpowered
 volatile uint8_t fireTriggerState = 0; // Switch state start as unpressed (0)
-volatile uint8_t DPS = 1; //BETA
+volatile uint8_t DPS = 15; 
 
 int MF=0;
 
